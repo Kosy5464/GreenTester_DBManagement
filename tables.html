@@ -21,6 +21,9 @@
   <!-- Custom styles for this page -->
   <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
+  <!-- Data 연동 -->
+  <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+  <script src="js/testDB.js"></script>
 </head>
 
 <body id="page-top">
@@ -337,7 +340,8 @@
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">Tables</h1>
           <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
-
+          <textarea rows="10" cols="60" id="testData" readonly></textarea>
+          <button type="button" class="btn btn-primary"  id="finalSubmit">확인</button>
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
@@ -358,12 +362,16 @@
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>Name</th>
-                      <th>Position</th>
-                      <th>Office</th>
-                      <th>Age</th>
-                      <th>Start date</th>
-                      <th>Salary</th>
+                      <th>이름</th>
+                      <th>나이</th>
+                      <th>기기</th>
+                      <th>거주지역</th>
+                      <th>직업/전공</th>
+                      <th>취미</th>
+                      <th>자취여부</th>
+                      <th>반려견여부</th>
+                      <th>자차보유여부</th>
+                      <th>자신의 일상</th>
                     </tr>
                   </tfoot>
                   <tbody>
