@@ -20,31 +20,7 @@ window.onload = function() {
     };
     firebase.initializeApp(config);
 
-            document.getElementById('testerTable').innerHTML=' <div class="table-responsive">\n' +
-            '                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">\n' +
-            '                                <thead>\n' +
-            '                                <tr>\n' +
-            '                                    <th>TesterID</th>\n' +
-            '                                    <th>등급</th>\n' +
-            '                                    <th>이름</th>\n' +
-            '                                    <th>나이</th>\n' +
-            '                                    <th>기기</th>\n' +
-            '                                    <th>직업/전공</th>\n' +
-            '                                    <th>취미</th>\n' +
-            '                                    <th>자취여부</th>\n' +
-            '                                    <th>반려견여부</th>\n' +
-            '                                    <th>자차보유여부</th>\n' +
-            '                                    <th>거주지역</th>\n' +
-            '                                    <th>자신의 일상</th>\n' +
-            '                                    <th>진행중 테스트</th>\n' +
-            '                                </tr>\n' +
-            '                                </thead>\n' +
-            '                                <tbody id="testData">\n' +
-            '                                <tr></tr>\n' +
-            '                                </tbody>\n' +
-            '                            </table>\n' +
-            '                        </div>';
-    document.getElementById('testerTable').setAttribute('id','dataTable');
+
 
     var testData = document.getElementById("testData");
 
