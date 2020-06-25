@@ -1,11 +1,4 @@
-//파이어 베이스 관련 js입니다
-<!-- Page level plugins -->
-document.write("<script src=\"vendor/datatables/jquery.dataTables.min.js\"></script>");
-document.write("<script src=\"vendor/datatables/dataTables.bootstrap4.min.js\"></script>");
-<!-- Page level custom scripts -->
-document.write("<script src=\"js/demo/datatables-demo.js\"></script>");
-
-document.write(" <link href=\"vendor/datatables/dataTables.bootstrap4.min.css\" rel=\"stylesheet\">");
+//전체 테스터 테이블 출력 부분
 
 window.onload = function() {
     const config = {
@@ -43,7 +36,7 @@ window.onload = function() {
         var ingTest = data.L_ingTest;
         if(name!=undefined){
             testData.innerHTML +='<tr>\n' +
-                '                                    <td></td>\n' +
+                '                                    <td>'+ +'</td>\n' +
                 '                                   <td>'+grade+'</td>\n' +
                 '                                  <td>'+name+'</td>\n' +
                 '                                   <td>'+age+'</td>\n' +
