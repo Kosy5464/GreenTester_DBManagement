@@ -29,7 +29,7 @@
     <!-- data 넣는 js -->
     <script src="js/inputData.js"></script>
     <!-- table data 값 출력 -->
-    <script src="js/testerTable.js"></script>
+    <script src="js/customerTable.js"></script>
 </head>
 
 <body id="page-top">
@@ -314,10 +314,33 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">제목을 적어요</h1>
-
+                <h1 class="h3 mb-2 text-gray-800">Customer 관리</h1>
+                <!-- DataTales Example -->
                 <div class="card shadow mb-4">
-                    내용을 적어 보세요.(지워도 되는 부분)
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-success">전체 Customer Table</h6>
+                    </div>
+                    <div class="card-body" id="testerTable">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th>Service 명</th>
+                                    <th>고객명</th>
+                                    <th>사용기기</th>
+                                    <th>대상연령</th>
+                                    <th>요청사항</th>
+                                    <th>메일 주소</th>
+                                    <th>연락처</th>
+                                </tr>
+                                </thead>
+                                <tbody id="customerData">
+                                <tr></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--table contents-->
+                    </div>
                 </div>
 
             </div>

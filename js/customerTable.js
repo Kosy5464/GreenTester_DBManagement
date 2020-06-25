@@ -15,7 +15,7 @@ window.onload = function() {
 
 
 
-    var testData = document.getElementById("testData");
+    var customerData = document.getElementById("customerData");
 
     var database = firebase.database();
 
@@ -31,7 +31,7 @@ window.onload = function() {
         var clientTel = data.K_clientTel;
 
         if(AppWeb!=undefined){
-            testData.innerHTML +='<tr>\n' +
+            customerData.innerHTML +='<tr>\n' +
                 '                                    <td>'+AppWeb+'</td>\n' +
                 '                                   <td>'+clientName+'</td>\n' +
                 '                                  <td>'+device+'</td>\n' +
