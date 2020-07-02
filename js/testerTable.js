@@ -18,7 +18,7 @@ window.onload = function() {
     var testData = document.getElementById("testData");
 
     var database = firebase.database();
-
+/**/
     var tableData = database.ref('10대');
     tableData.on('child_added',function(snapshot){
         var data = snapshot.val();
