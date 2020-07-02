@@ -35,12 +35,13 @@ window.onload = function() {
             var region = data.J_region;
             var daily = data.K_daily;
             var ingTest = data.L_ingTest;
+            var sex = data.N_sex;
             if (name != undefined) {
                 testData.innerHTML += '<tr>\n' +
                     '                                    <td>' + snapshot.key+'</td>\n' +
                     '                                   <td>' + grade + '</td>\n' +
                     '                                  <td>' + name + '</td>\n' +
-                    '                                   <td>' + age + '</td>\n' +
+                    '                                   <td>' + age+'/'+sex + '</td>\n' +
                     '                                   <td>' + device + '</td>\n' +
                     '                                   <td>' + job + '</td>\n' +
                     '                                   <td>' + hobby + '</td>\n' +
