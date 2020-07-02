@@ -26,10 +26,9 @@
 
     <!-- Data 연동 -->
     <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
-    <!-- data 넣는 js -->
-    <script src="js/inputData.js"></script>
+
     <!-- table data 값 출력 -->
-    <script src="js/testerTable.js"></script>
+    <script src="js/aboutDB/otCustomerTable.js"></script>
 </head>
 
 <body id="page-top">
@@ -52,15 +51,15 @@
         <hr class="sidebar-divider my-0">
 
         <!-- Nav Item - Dashboard -->
-        <li class="nav-item active">
-            <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
                 <i class="fas fa-fw fa-play-circle"></i>
                 <span>Ongoing Test</span>
             </a>
-            <div id="collapse1" class="collapse show" aria-labelledby="heading1" data-parent="#accordionSidebar">
+            <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Test 관리</h6>
-                    <a class="collapse-item active" href="OT_Customer.html">Customers</a>
+                    <a class="collapse-item" href="OT_Customer.html">Customers</a>
                     <a class="collapse-item" href="OT_Tester.html">Testers</a>
                 </div>
             </div>
@@ -74,7 +73,8 @@
             user management
         </div>
 
-        <li class="nav-item">
+
+        <li class="nav-item active">
             <a class="nav-link" href="CustomerPage.html">
                 <i class="fas fa-fw fa-user-shield"></i>
                 <span>Customer</span>
@@ -314,10 +314,33 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Test 진행중인 Customer 관련</h1>
-
+                <h1 class="h3 mb-2 text-gray-800">Customer 관리</h1>
+                <!-- DataTales Example -->
                 <div class="card shadow mb-4">
-                    내용내용
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-success">진행중인 Customer Table</h6>
+                    </div>
+                    <div class="card-body" id="testerTable">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th>Service 명</th>
+                                    <th>고객명</th>
+                                    <th>사용기기</th>
+                                    <th>대상연령</th>
+                                    <th>요청사항</th>
+                                    <th>메일 주소</th>
+                                    <th>연락처</th>
+                                </tr>
+                                </thead>
+                                <tbody id="customerData">
+                                <tr></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--table contents-->
+                    </div>
                 </div>
 
             </div>
