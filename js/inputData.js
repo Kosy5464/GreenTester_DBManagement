@@ -13,18 +13,18 @@ window.onload = function() {
     };
     firebase.initializeApp(config);
 
-    firebase.database().ref('/Customer/1').set({
-        A_:'C',
-        B_name: '포텥오칩',
-        C_age: '나이',
-        D_device: '기기기기기기기',
-        E_job: '직업직업직업',
-        F_hobby: '취미취미취미',
+   /* firebase.database().ref('/tester/60이상/1').set({
+        A_grade:'B',
+        B_name: '이외수',
+        C_age: '70세',
+        D_device: '아이스크림2',
+        E_job: '시인',
+        F_hobby: '독서(5)/글쓰기(4)',
         G_inhabit: 'O',
-        H_pet: 'O',
+        H_pet: '고양이',
         I_vehicle: 'O',
-        J_region: '경기도 용인시',
-        K_daily: '일상입니다만',
+        J_region: '경상남도 부산',
+        K_daily: '아침에 일어나 독서를 하고 점심때 산책을 하며 저녁때 글을 씁니다.',
         L_ingTest: ''
-    });
+    });*/
 };

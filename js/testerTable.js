@@ -19,7 +19,7 @@ window.onload = function() {
 
     var database = firebase.database();
 
-    var tableData = database.ref('tester');
+    var tableData = database.ref('10대');
     tableData.on('child_added',function(snapshot){
         var data = snapshot.val();
         var grade = data.A_grade;
