@@ -13,7 +13,7 @@ window.onload = function() {
     };
     firebase.initializeApp(config);
 
-   /* firebase.database().ref('/tester/60이상/1').set({
+   firebase.database().ref('/tester/60대/1').set({
         A_grade:'B',
         B_name: '이외수',
         C_age: '70세',
@@ -26,5 +26,5 @@ window.onload = function() {
         J_region: '경상남도 부산',
         K_daily: '아침에 일어나 독서를 하고 점심때 산책을 하며 저녁때 글을 씁니다.',
         L_ingTest: ''
-    });*/
+    });
 };
