@@ -13,18 +13,23 @@ window.onload = function() {
     };
     firebase.initializeApp(config);
 
-  /* firebase.database().ref('/tester/60대/1').set({
+  firebase.database().ref('/tester/').set({
         A_grade:'B',
-        B_name: '이외수',
-        C_age: '70세',
-        D_device: '아이스크림2',
-        E_job: '시인',
-        F_hobby: '독서(5)/글쓰기(4)',
-        G_inhabit: 'O',
-        H_pet: '고양이',
-        I_vehicle: 'O',
-        J_region: '경상남도 부산',
-        K_daily: '아침에 일어나 독서를 하고 점심때 산책을 하며 저녁때 글을 씁니다.',
-        L_ingTest: ''
-    });*/
+        B_name: '나영석',
+        C_age: '1976/03/12',
+        D_sex: '남자',
+        E_hobby: '게임제작(5)/야외취침(4)',
+        F_region: '충청북도 청주',
+        G_bank: '기업/11230213123',
+        H_nickName: '나노',
+        I_device: 'Android/갤럭시S20',
+        J_job: 'CJ ENM(프로듀서)',
+        K_inhabit: '함',
+        L_pet: '없음',
+        M_vehicle:'있음',
+        N_couple:'결혼',
+        O_onCheck:'0',
+        P_daily:'아침에 누군가에게 까나리액젓을 먹여요.',
+        Q_participatingService:'지오픽'
+    });
 };

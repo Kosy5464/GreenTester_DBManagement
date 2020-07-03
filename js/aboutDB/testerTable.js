@@ -26,31 +26,37 @@ window.onload = function() {
             var grade = data.A_grade;
             var name = data.B_name;//data.text;
             var age = data.C_age;
-            var device = data.D_device;
-            var job = data.E_job;
-            var hobby = data.F_hobby;
-            var inhabit = data.G_inhabit;
-            var pet = data.H_pet;
-            var vehicle = data.I_vehicle;
-            var region = data.J_region;
-            var daily = data.K_daily;
-            var ingTest = data.L_ingTest;
-            var sex = data.N_sex;
+            var sex = data.D_sex;
+            var hobby = data.E_hobby;
+            var region = data.F_region;
+            var bank = data.G_bank;
+            var nickname = data.H_nickName;
+            var device = data.I_device;
+            var job = data.J_job;
+            var inhabit = data.K_inhabit;
+            var pet = data.L_pet;
+            var vehicle = data.M_vehicle;
+            var couple = data.N_couple;
+            var onCheck = data.O_onCheck;
+            var daily = data.P_daily;
+            var particiService = data.Q_participatingService;
             if (name != undefined) {
                 testData.innerHTML += '<tr>\n' +
-                    '                                    <td>' + snapshot.key+'</td>\n' +
                     '                                   <td>' + grade + '</td>\n' +
                     '                                  <td>' + name + '</td>\n' +
                     '                                   <td>' + age+'/'+sex + '</td>\n' +
+                    '                                   <td>' + hobby + '</td>\n' +
+                    '                                   <td>' + region + '</td>\n' +
+                    '                                   <td>' + bank + '</td>\n' +
+                    '                                  <td>' + nickname + '</td>\n' +
                     '                                   <td>' + device + '</td>\n' +
                     '                                   <td>' + job + '</td>\n' +
-                    '                                   <td>' + hobby + '</td>\n' +
-                    '                                  <td>' + inhabit + '</td>\n' +
-                    '                                   <td>' + pet + '</td>\n' +
+                    '                                   <td>' + inhabit + '</td>\n' +
+                    '                                  <td>' + pet + '</td>\n' +
                     '                                   <td>' + vehicle + '</td>\n' +
-                    '                                   <td>' + region + '</td>\n' +
-                    '                                  <td>' + daily + '</td>\n' +
-                    '                                   <td>' + ingTest + '</td>\n' +
+                    '                                   <td>' + couple + '</td>\n' +
+                    '                                   <td>' + daily + '</td>\n' +
+                    '                                   <td>' + particiService + '</td>\n' +
                     '                                </tr>';
             }
         });
