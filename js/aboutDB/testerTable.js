@@ -15,7 +15,7 @@ window.onload = function() {
 
 
 
-    var testData = document.getElementById("testData");
+    var testData = document.getElementById("myTable");
 
     var database = firebase.database();
 
@@ -41,16 +41,16 @@ window.onload = function() {
             var daily = data.P_daily;
             var particiService = data.Q_participatingService;
             if (name != undefined) {
-                testData.innerHTML += '<tr>\n' +
+                testData.innerHTML += '<tr class="testerList">\n' +
                     '                                   <td>' + grade + '</td>\n' +
                     '                                  <td>' + name + '</td>\n' +
                     '                                   <td>' + age+'/'+sex + '</td>\n' +
                     '                                   <td>' + hobby + '</td>\n' +
                     '                                   <td>' + region + '</td>\n' +
-                    '                                   <td>' + bank + '</td>\n' +
                     '                                  <td>' + nickname + '</td>\n' +
                     '                                   <td>' + device + '</td>\n' +
                     '                                   <td>' + job + '</td>\n' +
+                    '                                   <td>' + bank + '</td>\n' +
                     '                                   <td>' + inhabit + '</td>\n' +
                     '                                  <td>' + pet + '</td>\n' +
                     '                                   <td>' + vehicle + '</td>\n' +
@@ -63,4 +63,39 @@ window.onload = function() {
     }
 };
 
+function myFunction() {
+    var radiogaga = document.getElementsByName("search1");
 
+    // Declare variables
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+        //[]인덱스 안에 번호에 따라서 name의 검색할지 Countrty에 검색할지 결정
+        //td = tr[i].getElementsByTagName("td")[1];
+        if(radiogaga[0].selected){
+            td=tr[i];
+        }
+        else {
+            for (var j = 1; j < radiogaga.length; j++) {
+                if (radiogaga[j].selected) {
+                    td = tr[i].getElementsByTagName("td")[j-1];
+                    console.log(td);
+                }
+            }
+        }
+
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}

@@ -34,7 +34,7 @@ window.onload = function() {
             customerData.innerHTML +='<tr>\n' +
                 '                                    <td>'+AppWeb+'</td>\n' +
                 '                                   <td>'+clientName+'</td>\n' +
-                '                                  <td>'+device+'</td>\n' +
+                '                                   <td>'+device+'</td>\n' +
                 '                                   <td>'+age+'</td>\n' +
                 '                                   <td>'+testDetails+'</td>\n' +
                 '                                   <td>'+clientEmail+'</td>\n' +
