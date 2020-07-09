@@ -42,21 +42,21 @@ window.onload = function() {
             var particiService = data.Q_participatingService;
             if (name != undefined) {
                 testData.innerHTML += '<tr class="testerList">\n' +
-                    '                                   <td>' + grade + '</td>\n' +
-                    '                                  <td>' + name + '</td>\n' +
-                    '                                   <td>' + age+'/'+sex + '</td>\n' +
-                    '                                   <td>' + hobby + '</td>\n' +
-                    '                                   <td>' + region + '</td>\n' +
-                    '                                  <td>' + nickname + '</td>\n' +
-                    '                                   <td>' + device + '</td>\n' +
-                    '                                   <td>' + job + '</td>\n' +
-                    '                                   <td>' + bank + '</td>\n' +
-                    '                                   <td>' + inhabit + '</td>\n' +
-                    '                                  <td>' + pet + '</td>\n' +
-                    '                                   <td>' + vehicle + '</td>\n' +
-                    '                                   <td>' + couple + '</td>\n' +
-                    '                                   <td>' + daily + '</td>\n' +
-                    '                                   <td>' + particiService + '</td>\n' +
+                    '                                   <td style="width:4%;">' + grade + '</td>\n' +
+                    '                                  <td style="width:6%;">' + name + '</td>\n' +
+                    '                                   <td style="width:7%;">' + age+'/'+sex + '</td>\n' +
+                    '                                   <td style="width:8%;">' + hobby + '</td>\n' +
+                    '                                   <td style="width:8%;">' + region + '</td>\n' +
+                    '                                  <td style="width:6%;">' + nickname + '</td>\n' +
+                    '                                   <td style="width:7%;">' + device + '</td>\n' +
+                    '                                   <td style="width:7%;">' + job + '</td>\n' +
+                    '                                   <td style="width:6%;">' + bank + '</td>\n' +
+                    '                                   <td style="width:5%;">' + inhabit + '</td>\n' +
+                    '                                  <td style="width:5%;">' + pet + '</td>\n' +
+                    '                                   <td style="width:5%;">' + vehicle + '</td>\n' +
+                    '                                   <td style="width:5%;">' + couple + '</td>\n' +
+                    '                                   <td style="width:12%;">' + daily + '</td>\n' +
+                    '                                   <td style="width:7%;">' + particiService + '</td>\n' +
                     '                                </tr>';
             }
         });
