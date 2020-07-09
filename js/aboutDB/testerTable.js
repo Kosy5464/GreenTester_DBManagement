@@ -19,8 +19,11 @@ window.onload = function() {
 
     var database = firebase.database();
 
+
     for(var AgeGroup=10;AgeGroup<=60;AgeGroup=AgeGroup+10) {
         var tableData = database.ref('tester/' + AgeGroup + '대');
+
+        //table 출력
         tableData.on('child_added', function (snapshot) {
             var data = snapshot.val();
             var grade = data.A_grade;
@@ -63,6 +66,7 @@ window.onload = function() {
     }
 };
 
+
 function myFunction() {
     var radiogaga = document.getElementsByName("search1");
 
@@ -84,11 +88,9 @@ function myFunction() {
             for (var j = 1; j < radiogaga.length; j++) {
                 if (radiogaga[j].selected) {
                     td = tr[i].getElementsByTagName("td")[j-1];
-                    console.log(td);
                 }
             }
         }
-
         if (td) {
             txtValue = td.textContent || td.innerText;
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
