@@ -11,7 +11,7 @@ $(document).ready(function(){
         tr = table.getElementsByTagName("tr");
 
         for (i = 0; i < tr.length; i++) {
-            td = tr[i];
+            td = tr[i].getElementsByTagName("td")[12];
             console.log(td);
             if (td) {
                 txtValue = td.textContent || td.innerText;
