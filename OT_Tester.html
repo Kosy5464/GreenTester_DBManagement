@@ -23,13 +23,14 @@
 
     <!-- Template CSS 파일 X-->
     <link href="css/gtCSS.css" rel="stylesheet">
+    <link href="css/ongoingTable.css" rel="stylesheet">
 
     <!-- Data 연동 -->
     <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
     <!-- data 넣는 js -->
     <script src="js/aboutDB/inputData.js"></script>
     <!-- table data 값 출력 -->
-    <script src="js/aboutDB/testerTable.js"></script>
+    <script src="js/aboutDB/otTesterTable.js"></script>
 </head>
 
 <body id="page-top">
@@ -314,12 +315,126 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Test 중인 Tester 관련</h1>
+                <h1 class="h3 mb-2 text-gray-800">진행중인 Tester 관리</h1>
 
+                <!-- 진행중인 Customer Card부분 -->
                 <div class="card shadow mb-4">
-                    응~ 내용
-                </div>
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-success">진행중인 Customer Table</h6>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group row">
+                                <form class="form-inline mr-auto">
 
+                                    <div class="input-group md-form form-sm form-2 pl-0">
+                                        <select class="category">
+                                            <option name="search1" value="total">전체&nbsp;&nbsp;&nbsp;</option>
+                                            <option name="search1" value="grade">등급</option>
+                                            <option name="search1" value="name">이름</option>
+                                            <option name="search1" value="AgeSex">나이/성별</option>
+                                            <option name="search1" value="hobby">취미</option>
+                                            <option name="search1" value="region">거주지</option>
+                                            <option name="search1" value="nickName">닉네임</option>
+                                            <option name="search1" value="device">사용기기</option>
+                                            <option name="search1" value="job">직업/전공</option>
+                                        </select>
+                                        <input class="form-control my-0 py-1 lime-border" onkeyup="myFunction()" id="myInput" type="text" placeholder="카테고리에 맞는 정보로 검색해주세요.." aria-label="Search">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text lime lighten-2" id=""> <i class="fas fa-search" aria-hidden="true"></i></i></span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="form-group row">
+                                <table class="table table-striped table-hover" id="tester_Table">
+                                    <thead>
+                                    <tr>
+                                        <th style="width:4%;">등급</th>
+                                        <th style="width:6%;">이름</th>
+                                        <th style="width:7%;">나이/성별</th>
+                                        <th style="width:8%;">취미</th>
+                                        <th style="width:8%;">거주지</th>
+                                        <th style="width:6%;">닉네임</th>
+                                        <th style="width:7%;">사용기기</th>
+                                        <th style="width:7%;">직업/전공</th>
+                                        <th style="width:7%;">계좌</th>
+                                        <th style="width:6%;">자취</th>
+                                        <th style="width:6%;">펫</th>
+                                        <th style="width:6%;">자차</th>
+                                        <th style="width:6%;">연애</th>
+                                        <th style="width:10%;">일상</th>
+                                        <th style="width:6%;">테스트</th>
+                                        <th style="width: 1%"></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="testerData">
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!--table contents-->
+                        </form>
+                    </div>
+                </div>
+                <!--테스트가 끝난 서비스 카드 부분-->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-success">종료된 Customer Table</h6>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group row">
+                                <form class="form-inline mr-auto">
+
+                                    <div class="input-group md-form form-sm form-2 pl-0">
+                                        <select class="category">
+                                            <option name="search2" value="total">전체&nbsp;&nbsp;&nbsp;</option>
+                                            <option name="search2" value="grade">등급</option>
+                                            <option name="search2" value="name">이름</option>
+                                            <option name="search2" value="AgeSex">나이/성별</option>
+                                            <option name="search2" value="hobby">취미</option>
+                                            <option name="search2" value="region">거주지</option>
+                                            <option name="search2" value="nickName">닉네임</option>
+                                            <option name="search2" value="device">사용기기</option>
+                                            <option name="search2" value="job">직업/전공</option>
+                                        </select>
+                                        <input class="form-control my-0 py-1 lime-border" onkeyup="myFunction2()" id="myInput2" type="text" placeholder="카테고리에 맞는 정보로 검색해주세요.." aria-label="Search">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text lime lighten-2"> <i class="fas fa-search" aria-hidden="true"></i></i></span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="form-group row">
+                                <table class="table table-striped table-hover" id="tester_Table2">
+                                    <thead>
+                                    <tr>
+                                        <th style="width:4%;">등급</th>
+                                        <th style="width:6%;">이름</th>
+                                        <th style="width:7%;">나이/성별</th>
+                                        <th style="width:8%;">취미</th>
+                                        <th style="width:8%;">거주지</th>
+                                        <th style="width:6%;">닉네임</th>
+                                        <th style="width:7%;">사용기기</th>
+                                        <th style="width:7%;">직업/전공</th>
+                                        <th style="width:7%;">계좌</th>
+                                        <th style="width:6%;">자취</th>
+                                        <th style="width:6%;">펫</th>
+                                        <th style="width:6%;">자차</th>
+                                        <th style="width:6%;">연애</th>
+                                        <th style="width:10%;">일상</th>
+                                        <th style="width:6%;">테스트</th>
+                                        <th style="width: 1%"></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="testerData2">
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!--table contents-->
+                        </form>
+                    </div>
+                </div>
             </div>
             <!-- /.container-fluid -->
 
