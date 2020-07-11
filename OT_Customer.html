@@ -28,8 +28,6 @@
     <!-- Data 연동 -->
     <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
 
-    <!-- table data 값 출력 -->
-    <script src="js/aboutDB/otCustomerTable.js"></script>
 </head>
 
 <body id="page-top">
@@ -352,20 +350,32 @@
                                         <th style="width:12%;">요청사항</th>
                                         <th style="width:6%;">메일 주소</th>
                                         <th style="width:6%;">연락처</th>
+                                        <th style="width:2%"></th>
                                     </tr>
                                     </thead>
                                     <tbody id="customerData">
                                     </tbody>
                                 </table>
                             </div>
-                            <!--table contents-->
+
+                            <div class="form-group row">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <button class="btn btn-outline-dark" type="button" id="Customer">선택한 Customer 확인</button>
+                                    </div>
+                                    <input type="text" class="form-control" aria-describedby="Customer" id="resultCustomer">
+                                    <div>
+                                        <button class="btn btn-success" type="button" id="changeCustomer" onclick="setCheckBox()">테스트 종료</button>
+                                    </div>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
-                <!--테스트가 끝난 서비스 카드 부분-->
+                <!--테스트 미진행 Customer 부분-->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-success">종료된 Customer Table</h6>
+                        <h6 class="m-0 font-weight-bold text-success">진행 전 Customer Table</h6>
                     </div>
                     <div class="card-body">
                         <form>
@@ -398,11 +408,81 @@
                                         <th style="width:12%;">요청사항</th>
                                         <th style="width:6%;">메일 주소</th>
                                         <th style="width:6%;">연락처</th>
+                                        <th style="width:2%"></th>
                                     </tr>
                                     </thead>
                                     <tbody id="customerData2">
                                     </tbody>
                                 </table>
+                            </div>
+                            <div class="form-group row">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <button class="btn btn-outline-dark" type="button" id="Customer2">선택한 Customer 확인</button>
+                                    </div>
+                                    <input type="text" class="form-control" aria-describedby="Customer2" id="resultCustomer2">
+                                    <div>
+                                        <button class="btn btn-info" type="button" id="changeCustomer2" onclick="setCheckBox2()">등록</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--table contents-->
+                        </form>
+                    </div>
+                </div>
+                <!--테스트가 끝난 서비스 카드 부분-->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-success">종료된 Customer Table</h6>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group row">
+                                <form class="form-inline mr-auto">
+
+                                    <div class="input-group md-form form-sm form-2 pl-0">
+                                        <select class="category">
+                                            <option name="search2" value="total">전체&nbsp;&nbsp;&nbsp;</option>
+                                            <option name="search2" value="grade">Service명</option>
+                                            <option name="search2" value="name">고객명</option>
+                                            <option name="search2" value="AgeSex">사용기기</option>
+                                            <option name="search2" value="hobby">대상연령</option>
+                                        </select>
+                                        <input class="form-control my-0 py-1 lime-border" onkeyup="myFunction3()" id="myInput3" type="text" placeholder="카테고리에 맞는 정보로 검색해주세요.." aria-label="Search">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text lime lighten-2"> <i class="fas fa-search" aria-hidden="true"></i></i></span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="form-group row">
+                                <table class="table table-striped table-hover" id="customer_Table3">
+                                    <thead>
+                                    <tr>
+                                        <th style="width:4%;">Service 명</th>
+                                        <th style="width:6%;">고객명</th>
+                                        <th style="width:6%;">사용기기</th>
+                                        <th style="width:6%;">대상연령</th>
+                                        <th style="width:12%;">요청사항</th>
+                                        <th style="width:6%;">메일 주소</th>
+                                        <th style="width:6%;">연락처</th>
+                                        <th style="width:2%"></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="customerData3">
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="form-group row">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <button class="btn btn-outline-dark" type="button" id="Customer3">선택한 Customer 확인</button>
+                                    </div>
+                                    <input type="text" class="form-control" aria-describedby="Customer3" id="resultCustomer3">
+                                    <div>
+                                        <button class="btn btn-danger" type="button" id="changeCustomer3" onclick="setCheckBox3()">삭제</button>
+                                    </div>
+                                </div>
                             </div>
                             <!--table contents-->
                         </form>
@@ -471,6 +551,9 @@
 <!-- Page level custom scripts -->
 <script src="js/demo/datatables-demo.js"></script>
 
+<!-- table data 값 출력 -->
+<script src="js/aboutDB/otCustomerTable.js"></script>
+<!--<script src="js/aboutChecklist/customerCheck.js"></script>-->
 </body>
 
 </html>
