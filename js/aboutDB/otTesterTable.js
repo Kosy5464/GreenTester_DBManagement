@@ -64,7 +64,7 @@ window.onload = function() {
                     '                                </tr>';
             }
             if (name != undefined&&onCheck==0) {
-                testerData2.innerHTML += '<tr class="testerList">\n' +
+                testerData2.innerHTML += '<tr class="testerList2">\n' +
                     '                                   <td style="width:4%;">' + grade + '</td>\n' +
                     '                                  <td style="width:6%;">' + name + '</td>\n' +
                     '                                   <td style="width:7%;">' + age+'/'+sex + '</td>\n' +
@@ -92,7 +92,7 @@ $(document).ready(function(){
         var rowData = new Array();
         var tdArr = new Array();
         var nickArr = new Array();
-        var ageArr = new Array();
+
         var checkbox = $("input[name=TesterN]:checked");
 
         checkbox.each(function(i){
@@ -111,28 +111,65 @@ $(document).ready(function(){
         $("#resultTester").val(tdArr);
         $("#changeTester").click(function() {
             var database = firebase.database();
+            for (var k = 0; k < nickArr.length; k++) {
             for (var AgeGroup = 10; AgeGroup <= 60; AgeGroup = AgeGroup + 10) {
                 var tableData = database.ref('tester/' + AgeGroup + '대');
-                for (var k = 0; k < nickArr.lenth; k++) {
                     tableData.on('child_added', function (snapshot) {
                         var data = snapshot.val();
                         var ageGroup = data.R_AgeGroup;
                         var nickName = data.H_nickName;
-                        for (var k = 0; k < nickArr.lenth; k++) {
-                            if(nickArr[k]==nickName){
-                                var testerData = database.ref('tester/'+ageGroup+'/'+nickArr[k]);
-                                console.log(tableData.toString());
-                                tableData.update({
-                                    O_onCheck: 0
-                                })
-                            }
+                        if (nickArr[k] == nickName) {
+                            var testerData = database.ref('tester/' + ageGroup + '/' + nickArr[k]);
+                            testerData.update({
+                                O_onCheck: 0
+                            })
                         }
                     })
                 }
             }
         })
     })
+    $("#Tester2").click(function(){
+        var rowData = new Array();
+        var tdArr = new Array();
+        var nickArr = new Array();
 
+        var checkbox = $("input[name=TesterN2]:checked");
+
+        checkbox.each(function(i){
+            var tr= checkbox.parent().parent().eq(i);
+            var td = tr.children();
+
+            rowData.push(tr.text());
+
+            var tester = td.eq(1).text();
+            tdArr.push(tester);
+
+            var nickName = td.eq(5).text();
+            nickArr.push(nickName);
+        })
+
+        $("#resultTester2").val(tdArr);
+        $("#changeTester2").click(function() {
+            var database = firebase.database();
+            for (var k = 0; k < nickArr.length; k++) {
+                for (var AgeGroup = 10; AgeGroup <= 60; AgeGroup = AgeGroup + 10) {
+                    var tableData = database.ref('tester/' + AgeGroup + '대');
+                    tableData.on('child_added', function (snapshot) {
+                        var data = snapshot.val();
+                        var ageGroup = data.R_AgeGroup;
+                        var nickName = data.H_nickName;
+                        if (nickArr[k] == nickName) {
+                            var testerData = database.ref('tester/' + ageGroup + '/' + nickArr[k]);
+                            testerData.update({
+                                O_onCheck: 1
+                            })
+                        }
+                    })
+                }
+            }
+        })
+    })
 })
 //검색 부분
 function myFunction() {
@@ -214,7 +251,7 @@ function setCheckBox(){
     $(".testerList:odd").css("background-color","white");
     $(".testerList:even").css("background-color","#eeeeee");
 
-  /*  window.location.reload();*/
+   window.location.reload();
 }
 function setCheckBox2(){
     $("input[name=TesterN2]").prop("checked",false);
