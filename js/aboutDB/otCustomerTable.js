@@ -91,7 +91,6 @@ $(document).ready(function(){
         $("#changeCustomer").click(function(){
             var database = firebase.database();
             for(var k=0;k<tdArr.length;k++){
-                console.log(tdArr[k]);
                 var tableData = database.ref('customer/'+tdArr[k]);
                 tableData.update({
                     L_onCheck:2

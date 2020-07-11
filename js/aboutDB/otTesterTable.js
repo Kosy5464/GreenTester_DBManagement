@@ -60,6 +60,7 @@ window.onload = function() {
                     '                                   <td style="width:5%;">' + couple + '</td>\n' +
                     '                                   <td style="width:12%;">' + daily + '</td>\n' +
                     '                                   <td style="width:7%;">' + particiService + '</td>\n' +
+                    '                                   <td style="width:1%;"><input type="checkbox" name="TesterN" onclick="setBg(this)"></td>\n' +
                     '                                </tr>';
             }
             if (name != undefined&&onCheck==0) {
@@ -79,12 +80,56 @@ window.onload = function() {
                     '                                   <td style="width:5%;">' + couple + '</td>\n' +
                     '                                   <td style="width:12%;">' + daily + '</td>\n' +
                     '                                   <td style="width:7%;">' + particiService + '</td>\n' +
+                    '                                   <td style="width:1%;"><input type="checkbox" name="TesterN2" onclick="setBg(this)"></td>\n' +
                     '                                </tr>';
             }
         });
     }
 };
 
+$(document).ready(function(){
+    $("#Tester").click(function(){
+        var rowData = new Array();
+        var tdArr = new Array();
+        var nickArr = new Array();
+        var ageArr = new Array();
+        var checkbox = $("input[name=TesterN]:checked");
+
+        checkbox.each(function(i){
+            var tr= checkbox.parent().parent().eq(i);
+            var td = tr.children();
+
+            rowData.push(tr.text());
+
+            var tester = td.eq(1).text();
+            tdArr.push(tester);
+
+            var nickName = td.eq(5).text();
+            nickArr.push(nickName);
+        })
+
+        $("#resultTester").val(tdArr);
+        $("#changeTester").click(function() {
+            var database = firebase.database();
+            for (var AgeGroup = 10; AgeGroup <= 60; AgeGroup = AgeGroup + 10) {
+                var tableData = database.ref('tester/' + AgeGroup + '대');
+                for (var k = 0; k < nickArr.lenth; k++) {
+                    tableData.on('child_added', function (snapshot) {
+                        var data = snapshot.val();
+                        var ageGroup = data.R_AgeGroup;
+                        var nickName = data.H_nickName;
+                        for (var k = 0; k < nickArr.lenth; k++) {
+                            if(nickArr[k]==nickName){
+                                var testerData = database.ref('tester/'+ageGroup+'/'+nickArr[k]);
+                            }
+                        }
+                    })
+                }
+            }
+        })
+    })
+
+})
 //검색 부분
 function myFunction() {
     var radiogaga = document.getElementsByName("search1");
@@ -153,4 +198,24 @@ function myFunction2() {
             }
         }
     }
+}
+//check된 배경색
+function setBg(t){
+    tr = t.parentNode.parentNode;
+    tr.style.backgroundColor=(t.checked)? "#d4edda":"";
+}
+
+function setCheckBox(){
+    $("input[name=TesterN]").prop("checked",false);
+    $(".testerList:odd").css("background-color","white");
+    $(".testerList:even").css("background-color","#eeeeee");
+
+  /*  window.location.reload();*/
+}
+function setCheckBox2(){
+    $("input[name=TesterN2]").prop("checked",false);
+    $(".testerList2:odd").css("background-color","white");
+    $(".testerList2:even").css("background-color","#eeeeee");
+
+    window.location.reload();
 }

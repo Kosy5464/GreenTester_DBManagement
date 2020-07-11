@@ -29,8 +29,6 @@
     <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
     <!-- data 넣는 js -->
     <script src="js/aboutDB/inputData.js"></script>
-    <!-- table data 값 출력 -->
-    <script src="js/aboutDB/otTesterTable.js"></script>
 </head>
 
 <body id="page-top">
@@ -315,12 +313,12 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">진행중인 Tester 관리</h1>
+                <h1 class="h3 mb-2 text-gray-800">진행 중인 Tester 관리</h1>
 
                 <!-- 진행중인 Customer Card부분 -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-success">진행중인 Customer Table</h6>
+                        <h6 class="m-0 font-weight-bold text-success">테스트 진행 중인 Tester</h6>
                     </div>
                     <div class="card-body">
                         <form>
@@ -365,12 +363,23 @@
                                         <th style="width:6%;">연애</th>
                                         <th style="width:10%;">일상</th>
                                         <th style="width:6%;">테스트</th>
-                                        <th style="width: 1%"></th>
+                                        <th style="width: 4%"></th>
                                     </tr>
                                     </thead>
                                     <tbody id="testerData">
                                     </tbody>
                                 </table>
+                            </div>
+                            <div class="form-group row">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <button class="btn btn-outline-dark" type="button" id="Tester">선택한 Tester 확인</button>
+                                    </div>
+                                    <input type="text" class="form-control" aria-describedby="Tester" id="resultTester">
+                                    <div>
+                                        <button class="btn btn-danger" type="button" id="changeTester" onclick="setCheckBox()">삭제</button>
+                                    </div>
+                                </div>
                             </div>
                             <!--table contents-->
                         </form>
@@ -379,7 +388,7 @@
                 <!--테스트가 끝난 서비스 카드 부분-->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-success">종료된 Customer Table</h6>
+                        <h6 class="m-0 font-weight-bold text-success">테스트 진행이 가능한 Tester</h6>
                     </div>
                     <div class="card-body">
                         <form>
@@ -424,12 +433,23 @@
                                         <th style="width:6%;">연애</th>
                                         <th style="width:10%;">일상</th>
                                         <th style="width:6%;">테스트</th>
-                                        <th style="width: 1%"></th>
+                                        <th style="width: 4%"></th>
                                     </tr>
                                     </thead>
                                     <tbody id="testerData2">
                                     </tbody>
                                 </table>
+                            </div>
+                            <div class="form-group row">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <button class="btn btn-outline-dark" type="button" id="Tester2">선택한 Tester 확인</button>
+                                    </div>
+                                    <input type="text" class="form-control" aria-describedby="Tester2" id="resultTester2">
+                                    <div>
+                                        <button class="btn btn-info" type="button" id="changeTester2" onclick="setCheckBox2()">등록</button>
+                                    </div>
+                                </div>
                             </div>
                             <!--table contents-->
                         </form>
@@ -497,7 +517,8 @@
 
 <!-- Page level custom scripts -->
 <script src="js/demo/datatables-demo.js"></script>
-
+<!-- table data 값 출력 -->
+<script src="js/aboutDB/otTesterTable.js"></script>
 </body>
 
 </html>
