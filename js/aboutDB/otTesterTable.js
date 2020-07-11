@@ -121,6 +121,10 @@ $(document).ready(function(){
                         for (var k = 0; k < nickArr.lenth; k++) {
                             if(nickArr[k]==nickName){
                                 var testerData = database.ref('tester/'+ageGroup+'/'+nickArr[k]);
+                                console.log(tableData.toString());
+                                tableData.update({
+                                    O_onCheck: 0
+                                })
                             }
                         }
                     })
