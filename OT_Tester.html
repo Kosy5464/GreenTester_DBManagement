@@ -73,12 +73,18 @@
         </div>
 
         <li class="nav-item">
-            <a class="nav-link" href="CustomerPage.html">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse1">
                 <i class="fas fa-fw fa-user-shield"></i>
                 <span>Customer</span>
             </a>
+            <div id="collapse2" class="collapse" aria-labelledby="heading1" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Customer 관련</h6>
+                    <a class="collapse-item" href="CustomerPage.html">전체 Customer</a>
+                    <a class="collapse-item" href="inputCustomer.html">Customer 입력</a>
+                </div>
+            </div>
         </li>
-
         <li class="nav-item">
             <a class="nav-link" href="TesterPage.html">
                 <i class="fas fa-fw fa-user-friends"></i>
