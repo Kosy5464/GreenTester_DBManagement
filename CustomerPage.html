@@ -26,10 +26,8 @@
     <link href="css/totalTable.css" rel="stylesheet">
     <!-- Data 연동 -->
     <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
-    <!-- data 넣는 js -->
-    <script src="js/aboutDB/inputData.js"></script>
-    <!-- table data 값 출력 -->
-    <script src="js/aboutDB/customerTable.js"></script>
+
+
 </head>
 
 <body id="page-top">
@@ -352,11 +350,18 @@
                                     <th style="width:12%;">요청사항</th>
                                     <th style="width:6%;">메일 주소</th>
                                     <th style="width:6%;">연락처</th>
+                                    <th style="width:3%;"></th>
                                 </tr>
                                 </thead>
                                 <tbody id="customerData">
                                 </tbody>
                             </table>
+                            <button type="button" class="btn btn-danger btn-xl" data-toggle="modal" data-target=".totalModal" id="dataDelete">
+                                삭제하기
+                            </button>
+                            <div class="modal fade totalModal" id="modal" tabindex="-1" role="dialog" aria-labelledby="totalModalLabel" aria-hidden="true">
+
+                            </div>
                         </div>
                         <!--table contents-->
                         </form>
@@ -421,7 +426,8 @@
 
 <!-- Page level custom scripts -->
 <script src="js/demo/datatables-demo.js"></script>
-
+        <!-- table data 값 출력 -->
+        <script src="js/aboutDB/customerTable.js"></script>
 </body>
 
 </html>

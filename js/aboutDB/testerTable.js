@@ -60,12 +60,90 @@ window.onload = function() {
                     '                                   <td style="width:5%;">' + couple + '</td>\n' +
                     '                                   <td style="width:12%;">' + daily + '</td>\n' +
                     '                                   <td style="width:7%;">' + particiService + '</td>\n' +
+                    '                                   <td style="width:3%;"><input type="checkbox" name="DeleteTester" onclick="setBg(this)"></td>\n' +
                     '                                </tr>';
             }
         });
     }
 };
 
+$(document).ready(function(){
+    $("#dataDelete").click(function () {
+        var checkbox = $("input[name=DeleteCustomer]:checked").val();
+        console.log(checkbox);
+
+        if(checkbox==0){
+            document.getElementById("modal").innerHTML =
+                '                                 <div class="modal-dialog modal-lg" role="document">\n' +
+                '                                                           <div class="modal-content">\n' +
+                '                                                                 <div class="modal-header">\n' +
+                '                                                                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">\n' +
+                '                                                                                    <span aria-hidden="true">&times;</span>\n' +
+                '                                                                                </button>\n' +
+                '                                                                        </div>\n' +
+                '                                                                   <div class="modal-body" id="modalContent">\n' +
+                '                                                                        <h2>체크된 값이 읍썽!!!</h2>\n' +
+                '                                                                        </div>\n' +
+                '                                                                    <div class="modal-footer">\n' +
+                '                                                                            <button type="button" class="btn btn-default"  data-dismiss="modal">닫기</button>\n' +
+                '                                                                        </div>\n' +
+                '                                                                </div>\n' +
+                '                                                       </div>\n'
+        }
+        else{
+            document.getElementById("modal").innerHTML =
+                '                                 <div class="modal-dialog modal-lg" role="document">\n' +
+                '                                                           <div class="modal-content">\n' +
+                '                                                                 <div class="modal-header">\n' +
+                '                                                                         <h5 class="modal-title">마지막으로 다시 묻겠어</h5>\n' +
+                '                                                                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">\n' +
+                '                                                                                    <span aria-hidden="true">&times;</span>\n' +
+                '                                                                                </button>\n' +
+                '                                                                        </div>\n' +
+                '                                                                   <div class="modal-body" id="modalContent">\n' +
+                '                                                                        정말 삭제하시겠습니까?\n' +
+                '                                                                        </div>\n' +
+                '                                                                    <div class="modal-footer">\n' +
+                '                                                                        <button class="btn btn-outline-danger"  id="deleteTester">삭제</button>\n' +
+                '                                                                            <button type="button" class="btn btn-default"  data-dismiss="modal">취소</button>\n' +
+                '                                                                        </div>\n' +
+                '                                                                </div>\n' +
+                '                                                       </div>\n'
+            $("#deleteTester").click(function(){
+                var tdArr = new Array();
+                var nickArr = new Array();
+                var checkbox = $("input[name=DeleteTester]:checked");
+
+                checkbox.each(function(i){
+                    var tr= checkbox.parent().parent().eq(i);
+                    var td = tr.children();
+
+                    var tester = td.eq(1).text();
+                    tdArr.push(tester);
+
+                    var nickName = td.eq(5).text();
+                    nickArr.push(nickName);
+                })
+                    var database = firebase.database();
+                    for (var k = 0; k < nickArr.length; k++) {
+                        for (var AgeGroup = 10; AgeGroup <= 60; AgeGroup = AgeGroup + 10) {
+                            var tableData = database.ref('tester/' + AgeGroup + '대');
+                            tableData.on('child_added', function (snapshot) {
+                                var data = snapshot.val();
+                                var ageGroup = data.R_AgeGroup;
+                                var nickName = data.H_nickName;
+                                if (nickArr[k] == nickName) {
+                                    var testerData = database.ref('tester/' + ageGroup + '/' + nickArr[k]);
+                                    testerData.remove();
+                                }
+                            })
+                        }
+                    }
+                window.location.reload();
+            })
+        }
+    })
+})
 
 function myFunction() {
     var radiogaga = document.getElementsByName("search1");
@@ -100,4 +178,9 @@ function myFunction() {
             }
         }
     }
+}
+//check된 배경색
+function setBg(t){
+    tr = t.parentNode.parentNode;
+    tr.style.backgroundColor=(t.checked)? "#d4edda":"";
 }
