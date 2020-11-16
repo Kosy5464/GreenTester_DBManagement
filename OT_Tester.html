@@ -34,7 +34,6 @@
 
 <!-- Page Wrapper -->
 <div id="wrapper">
-
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -91,6 +90,19 @@
                 <span>Tester</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+                <i class="fas fa-fw fa-file-alt"></i>
+                <span>Test-Doc</span>
+            </a>
+            <div id="collapse3" class="collapse" aria-labelledby="heading1" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Test 문서 관련</h6>
+                    <a class="collapse-item" href="CreatePage.html">Create</a>
+                    <a class="collapse-item" href="DocOngoing.html">Ongoing</a>
+                </div>
+            </div>
+        </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider">
@@ -123,8 +135,6 @@
         </div>
 
     </ul>
-    <!-- End of Sidebar -->
-
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
@@ -524,6 +534,10 @@
 <script src="js/demo/datatables-demo.js"></script>
 <!-- table data 값 출력 -->
 <script src="js/aboutDB/otTesterTable.js"></script>
+
+<!--sidebar-->
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/sideBar.js"></script>
 </body>
 
 </html>
